@@ -1,0 +1,5 @@
+build:
+    stability: alpha
+    engine: ../../../../nanobox-engine-clojure
+web1:
+    stability: alpha
