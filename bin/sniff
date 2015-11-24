@@ -4,6 +4,6 @@
 
 # $1 = code_dir
 
-if [ ! -f ${1}/project.clj ]
+if [[ ! -f ${1}/project.clj ]]; then
   exit 1
 fi

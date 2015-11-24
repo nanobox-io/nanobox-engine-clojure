@@ -17,7 +17,7 @@ END
 }
 
 clojure_runtime() {
-  
+  echo "$(java_condensed_runtime)-clojure"
 }
 
 clojure_install_runtime() {

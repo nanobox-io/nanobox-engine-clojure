@@ -9,7 +9,7 @@
 nos_init "$@"
 
 # source common lib
-. ${engine_lib_dir}/common.sh
+. ${engine_lib_dir}/clojure.sh
 
 # run Boxfile hooks defined in the "before" node
 nos_run_hooks "before"
