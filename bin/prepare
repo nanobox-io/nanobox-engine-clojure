@@ -6,36 +6,38 @@
 . /opt/nos/common.sh
 
 # initialize Nos with the original arguments
-nos_init $@
+nos_init "$@"
 
 # source common lib
 . ${engine_lib_dir}/common.sh
 
 # install sun*_java or openjdk*
-install_runtime
+java_install_runtime
+
+clojure_install_runtime
 
 # install leiningen
-install_leiningen
+clojure_install_leiningen
 
 # install node.js for static assets
-install_js_runtime
+nodejs_install_runtime
 
 # install bower via npm if Bower.json is found
-install_bower
+nodejs_install_bower
 
 # persist all environment variables 
-persist_evars
+nos_persist_evars
 
 # lein uberjar
-lein_uberjar
+clojure_lein_uberjar
 
 # run custom build script if the project includes one
-custom_build_script
+clojure_custom_build_script
 
 # run bower install if Bower.json is found
-bower_install
+nodejs_bower_install
 
 # persist the current node.js version in the cache
-set_js_runtime
+nodejs_set_runtime
 
 exit 0

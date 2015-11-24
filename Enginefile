@@ -1,10 +1,12 @@
-name: 'java'
+name: 'clojure'
 version: '0.1.0'
-summary: 'Nanobox engine for generic Java deployments'
+summary: 'Nanobox engine for generic Clojure deployments'
 language: 'java'
 stability: 'stable'
 license: 'MPL'
 generic: true
+overlays:
+  - java
 
 authors:
   - braxton@nanobox.io
