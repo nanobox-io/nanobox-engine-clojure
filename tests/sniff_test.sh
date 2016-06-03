@@ -11,6 +11,6 @@ fail "Detected something when there shouldn't be anything" docker exec $UUID bas
 
 pass "unable to remove code folder" docker exec $UUID rm -rf /opt/code
 
-pass "Failed to copy test project" docker exec $UUID cp -r /opt/tests/sample-clojure/src /opt/code
+pass "Failed to copy test project" docker exec $UUID cp -r /opt/tests/sample-clojure /opt/code
 
 pass "Failed to detect" docker exec $UUID bash -c "cd /opt/engines/clojure/bin; ./sniff /opt/code"
