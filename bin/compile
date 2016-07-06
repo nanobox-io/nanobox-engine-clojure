@@ -11,15 +11,10 @@ nos_init "$@"
 # source common lib
 . ${engine_lib_dir}/clojure.sh
 
-# run Boxfile hooks defined in the "before" node
-nos_run_hooks "before"
+# lein uberjar
+lein_uberjar
 
-# run Boxfile hooks defined in the "exec" node
-nos_run_hooks "exec"
+# run custom build script if the project includes one
+custom_build_script
 
-# run Boxfile hooks defined in the "after" node
-nos_run_hooks "after"
-
-# copy the source code into the live directory
-nos_print_bullet "Copying release into live code directory..."
-rsync -a $(payload 'code_dir')/ $(payload 'live_dir')
+exit 0

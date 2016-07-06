@@ -14,4 +14,3 @@ nos_init "$@"
 # dynamically generate a Boxfile from a template,
 # and print to stdout
 nos_print_process_start "Generating Engine Boxfile"
-clojure_create_boxfile
