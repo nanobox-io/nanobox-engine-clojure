@@ -57,7 +57,7 @@ Specifies which Java runtime and version to use. The following runtimes are avai
 ```yaml
 code.build:
   config:
-    java_runtime: sun-jdk8
+    java_runtime: oraclejdk8
 ```
 
 ---
