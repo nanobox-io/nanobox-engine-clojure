@@ -11,17 +11,22 @@ nos_init "$@"
 # source common lib
 . ${engine_lib_dir}/clojure.sh
 
-# install sun*_java or openjdk*
-install_runtime
+# lein uberjar
+lein_uberjar
 
-# if nodejs is required, we have a bit more setup to do
+# if nodejs is required, we have a bit more compiling to do
 if [[ "$(is_nodejs_required)" = "true" ]]; then
+  # run npm rebuild only if the runtime has changed
+  npm_rebuild
 
-  # add node_modules/.bin to the PATH
-  persist_npm_bin_to_path
+  # run npm install
+  npm_install
 
-  # set the node.js runtime in cache
-  nodejs_persist_runtime
+  # run npm prune
+  npm_prune
 fi
+
+# run custom build script if the project includes one
+custom_build_script
 
 exit 0

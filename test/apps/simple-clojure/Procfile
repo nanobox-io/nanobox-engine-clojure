@@ -1,0 +1,1 @@
+web: java $JVM_OPTS -cp target/uberjar/simple-clojure.jar clojure.main -m simple-clojure.core
