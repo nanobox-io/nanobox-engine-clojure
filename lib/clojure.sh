@@ -52,6 +52,11 @@ lein_uberjar() {
   [[ "$(grep -c :uberjar-name $(nos_code_dir)/project.clj)" -ge 1 ]] && (cd $(nos_code_dir); nos_run_process "lein uberjar" "lein uberjar")
 }
 
+lein_install() {
+  [[ -f $(nos_code_dir)/bin/build ]] && return
+  (cd $(nos_code_dir); nos_run_process "lein install" "lein install")
+}
+
 custom_build_script() {
   [[ -f $(nos_code_dir)/bin/build ]] && (cd $(nos_code_dir); nos_run_process "build" "bin/build")
 }
