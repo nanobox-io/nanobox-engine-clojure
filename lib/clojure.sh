@@ -94,3 +94,21 @@ links_payload() {
 }
 END
 }
+
+copy_cached_files() {
+  if [ -d $(nos_cache_dir)/lein ]; then
+    rsync -a $(nos_cache_dir)/lein/ $(nos_data_dir)/var/lein
+  fi
+  if [ -d $(nos_cache_dir)/m2 ]; then
+    rsync -a $(nos_cache_dir)/m2/ $(nos_data_dir)/var/m2
+  fi
+}
+
+save_cached_files() {
+  if [ -d $(nos_data_dir)/var/lein ]; then
+    rsync -a --delete $(nos_data_dir)/var/lein/ $(nos_cache_dir)/lein
+  fi
+  if [ -d $(nos_data_dir)/var/m2 ]; then
+    rsync -a --delete $(nos_data_dir)/var/m2/ $(nos_cache_dir)/m2
+  fi
+}
