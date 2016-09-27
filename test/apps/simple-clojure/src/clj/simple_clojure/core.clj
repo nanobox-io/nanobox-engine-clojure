@@ -1,8 +1,8 @@
-(ns simple-clojure.core
-  (:require [simple-clojure.handler :as handler]
+(ns simple_clojure.core
+  (:require [simple_clojure.handler :as handler]
             [luminus.repl-server :as repl]
             [luminus.http-server :as http]
-            [simple-clojure.config :refer [env]]
+            [simple_clojure.config :refer [env]]
             [clojure.tools.cli :refer [parse-opts]]
             [clojure.tools.logging :as log]
             [luminus.logger :as logger]

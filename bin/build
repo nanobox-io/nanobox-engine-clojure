@@ -14,12 +14,22 @@ nos_init "$@"
 # install sun*_java or openjdk*
 install_runtime
 
+# Set up dirs for deps
+lein_deps_dir
+
 # Get dependencies
-lein_install
+lein_deps
+
+# Set up profile 
+create_profile_links
 
 # if nodejs is required, we have a bit more setup to do
 if [[ "$(is_nodejs_required)" = "true" ]]; then
-	# run npm rebuild only if the runtime has changed
+  persist_npm_bin_to_path
+
+  nodejs_persist_runtime
+
+  # run npm rebuild only if the runtime has changed
   npm_rebuild
 
   # run npm install

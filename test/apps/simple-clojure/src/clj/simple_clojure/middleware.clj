@@ -1,11 +1,11 @@
-(ns simple-clojure.middleware
-  (:require [simple-clojure.env :refer [defaults]]
+(ns simple_clojure.middleware
+  (:require [simple_clojure.env :refer [defaults]]
             [clojure.tools.logging :as log]
-            [simple-clojure.layout :refer [*app-context* error-page]]
+            [simple_clojure.layout :refer [*app-context* error-page]]
             [ring.middleware.anti-forgery :refer [wrap-anti-forgery]]
             [ring.middleware.webjars :refer [wrap-webjars]]
             [ring.middleware.format :refer [wrap-restful-format]]
-            [simple-clojure.config :refer [env]]
+            [simple_clojure.config :refer [env]]
             [ring.middleware.flash :refer [wrap-flash]]
             [immutant.web.middleware :refer [wrap-session]]
             [ring.middleware.defaults :refer [site-defaults wrap-defaults]])

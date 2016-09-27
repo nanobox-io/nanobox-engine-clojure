@@ -1,4 +1,4 @@
-(ns simple-clojure.layout
+(ns simple_clojure.layout
   (:require [selmer.parser :as parser]
             [selmer.filters :as filters]
             [markdown.core :refer [md-to-html-string]]

@@ -108,7 +108,7 @@ setup() {
   cd /tmp/code
 
   # start the server in the background
-  java -jar simple-clojure.jar --port 8080 &
+  java -jar simple_clojure.jar --port 8080 &
 
   # grab the pid
   pid=$!

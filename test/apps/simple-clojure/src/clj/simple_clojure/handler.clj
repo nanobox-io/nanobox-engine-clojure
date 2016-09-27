@@ -1,11 +1,11 @@
-(ns simple-clojure.handler
+(ns simple_clojure.handler
   (:require [compojure.core :refer [routes wrap-routes]]
-            [simple-clojure.layout :refer [error-page]]
-            [simple-clojure.routes.home :refer [home-routes]]
+            [simple_clojure.layout :refer [error-page]]
+            [simple_clojure.routes.home :refer [home-routes]]
             [compojure.route :as route]
-            [simple-clojure.env :refer [defaults]]
+            [simple_clojure.env :refer [defaults]]
             [mount.core :as mount]
-            [simple-clojure.middleware :as middleware]))
+            [simple_clojure.middleware :as middleware]))
 
 (mount/defstate init-app
                 :start ((or (:init defaults) identity))

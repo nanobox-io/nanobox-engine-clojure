@@ -2,12 +2,12 @@
 
 ### Managing Your Middleware
 
-Request middleware functions are located under the `simple-clojure.middleware` namespace.
+Request middleware functions are located under the `simple_clojure.middleware` namespace.
 
 This namespace is reserved for any custom middleware for the application. Some default middleware is
 already defined here. The middleware is assembled in the `wrap-base` function.
 
-Middleware used for development is placed in the `simple-clojure.dev-middleware` namespace found in
+Middleware used for development is placed in the `simple_clojure.dev-middleware` namespace found in
 the `env/dev/clj/` source path.
 
 ### Here are some links to get started
