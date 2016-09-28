@@ -1,11 +1,11 @@
-(ns simple-clojure.env
+(ns simple_clojure.env
   (:require [clojure.tools.logging :as log]))
 
 (def defaults
   {:init
    (fn []
-     (log/info "\n-=[simple-clojure started successfully]=-"))
+     (log/info "\n-=[simple_clojure started successfully]=-"))
    :stop
    (fn []
-     (log/info "\n-=[simple-clojure has shut down successfully]=-"))
+     (log/info "\n-=[simple_clojure has shut down successfully]=-"))
    :middleware identity})

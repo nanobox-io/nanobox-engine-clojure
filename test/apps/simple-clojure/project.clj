@@ -1,4 +1,4 @@
-(defproject simple-clojure "0.1.0-SNAPSHOT"
+(defproject simple_clojure "0.1.0-SNAPSHOT"
 
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
@@ -31,7 +31,7 @@
   :source-paths ["src/clj"]
   :resource-paths ["resources"]
   :target-path "target/%s/"
-  :main simple-clojure.core
+  :main simple_clojure.core
 
   :plugins [[lein-cprop "1.0.1"]
             [lein-immutant "2.1.0"]]
@@ -40,7 +40,7 @@
   {:uberjar {:omit-source true
              
              :aot :all
-             :uberjar-name "simple-clojure.jar"
+             :uberjar-name "simple_clojure.jar"
              :source-paths ["env/prod/clj"]
              :resource-paths ["env/prod/resources"]}
 

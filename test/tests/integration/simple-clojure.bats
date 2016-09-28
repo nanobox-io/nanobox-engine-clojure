@@ -41,6 +41,9 @@ setup() {
 }
 
 @test "boxfile" {
+  if [[ ! -f /engine/bin/boxfile ]]; then
+    skip "No boxfile script"
+  fi
   run /engine/bin/boxfile "$(payload)"
 
   echo "$output"
@@ -48,8 +51,11 @@ setup() {
   [ "$status" -eq 0 ]
 }
 
-@test "prepare" {
-  run /engine/bin/prepare "$(payload)"
+@test "build" {
+  if [[ ! -f /engine/bin/build ]]; then
+    skip "No build script"
+  fi
+  run /engine/bin/build "$(payload)"
 
   echo "$output"
 
@@ -57,6 +63,9 @@ setup() {
 }
 
 @test "compile" {
+  if [[ ! -f /engine/bin/compile ]]; then
+    skip "No compile script"
+  fi
   run /engine/bin/compile "$(payload)"
 
   echo "$output"
@@ -67,6 +76,9 @@ setup() {
 }
 
 @test "cleanup" {
+  if [[ ! -f /engine/bin/cleanup ]]; then
+    skip "No cleanup script"
+  fi
   run /engine/bin/cleanup "$(payload)"
 
   echo "$output"
@@ -75,6 +87,9 @@ setup() {
 }
 
 @test "release" {
+  if [[ ! -f /engine/bin/release ]]; then
+    skip "No release script"
+  fi
   run /engine/bin/release "$(payload)"
 
   echo "$output"
@@ -93,7 +108,7 @@ setup() {
   cd /tmp/code
 
   # start the server in the background
-  java -jar simple-clojure.jar --port 8080 &
+  java -jar simple_clojure.jar --port 8080 &
 
   # grab the pid
   pid=$!
