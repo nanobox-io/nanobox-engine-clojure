@@ -17,12 +17,8 @@ install_runtime
 # Set up dirs for deps
 lein_deps_dir
 
-copy_cached_files
-
 # Get dependencies
 lein_deps
-
-save_cached_files
 
 # Set up profile 
 create_profile_links

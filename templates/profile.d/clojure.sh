@@ -2,9 +2,9 @@
 # vim: ts=2 sw=2 ft=bash noet
 
 if [ ! -s ${HOME}/.lein ]; then
-  ln -sf {{data_dir}}/var/lein ${HOME}/.lein
+  ln -sf {{code_dir}}/.lein ${HOME}/.lein
 fi
 
 if [ ! -s ${HOME}/.m2 ]; then
-  ln -sf {{data_dir}}/var/m2 ${HOME}/.m2
+  ln -sf {{code_dir}}/.m2 ${HOME}/.m2
 fi
