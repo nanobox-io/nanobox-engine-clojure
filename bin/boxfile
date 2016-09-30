@@ -3,11 +3,14 @@
 # vim: ts=2 sw=2 ft=bash noet
 
 cat <<-END
+env:
+  JAVA_HOME: $(java_home)
+  JAVA_OPTS: "-XX:+UseCompressedOops"
+  PORT: 8080
 code.build:
   lib_dirs:
     - .lein
     - .m2
-    - node_modules
 END
 
 exit 0

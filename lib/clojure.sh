@@ -1,9 +1,6 @@
 # -*- mode: bash; tab-width: 2; -*-
 # vim: ts=2 sw=2 ft=bash noet
 
-# source nodejs
-. ${engine_lib_dir}/nodejs.sh
-
 java_runtime() {
   echo $(nos_validate "$(nos_payload 'config_java_runtime')" "string" "oracle-jdk8")
 }
@@ -24,10 +21,6 @@ leiningen_package() {
 install_runtime() {
   pkgs=($(java_runtime) $(clojure_package) $(leiningen_package))
 
-  if [[ "$(is_nodejs_required)" = "true" ]]; then
-    pkgs+=("$(nodejs_dependencies)")
-  fi
-
   nos_install ${pkgs[@]}
 }
 
@@ -35,11 +28,6 @@ install_runtime() {
 uninstall_build_packages() {
   # currently ruby doesn't install any build-only deps... I think
   pkgs=()
-
-  # if nodejs is required, let's fetch any node build deps
-  if [[ "$(is_nodejs_required)" = "true" ]]; then
-    pkgs+=("$(nodejs_build_dependencies)")
-  fi
 
   # if pkgs isn't empty, let's uninstall what we don't need
   if [[ ${#pkgs[@]} -gt 0 ]]; then
