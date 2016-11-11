@@ -7,7 +7,7 @@ env:
   JAVA_HOME: $(java_home)
   JAVA_OPTS: "-XX:+UseCompressedOops"
   PORT: 8080
-code.build:
+run.config:
   lib_dirs:
     - .lein
     - .m2
