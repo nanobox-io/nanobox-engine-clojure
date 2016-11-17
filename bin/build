@@ -14,13 +14,7 @@ nos_init "$@"
 # install sun*_java or openjdk*
 install_runtime
 
-# Set up dirs for deps
-lein_deps_dir
-
 # Get dependencies
 lein_deps
-
-# Set up profile 
-create_profile_links
 
 exit 0
