@@ -59,26 +59,3 @@ publish_release() {
 	  rsync -a $(nos_code_dir)/ $(nos_app_dir)
 	fi
 }
-
-lein_deps_dir() {
-  [[ ! -f $(nos_code_dir)/.lein ]] && nos_run_process "make lein dir" "mkdir -p $(nos_code_dir)/.lein"
-  [[ ! -s ${HOME}/.lein ]] && nos_run_process "link lein dir" "ln -s $(nos_code_dir)/.lein ${HOME}/.lein"
-  [[ ! -f $(nos_code_dir)/.m2 ]] && nos_run_process "make m2 dir" "mkdir -p $(nos_code_dir)/.m2"
-  [[ ! -s ${HOME}/.m2 ]] && nos_run_process "link m2 dir" "ln -s $(nos_code_dir)/.m2 ${HOME}/.m2"
-}
-
-create_profile_links() {
-  mkdir -p $(nos_data_dir)/etc/profile.d/
-  nos_template \
-    "profile.d/clojure.sh" \
-    "$(nos_data_dir)/etc/profile.d/clojure.sh" \
-    "$(links_payload)"
-}
-
-links_payload() {
-  cat <<-END
-{
-  "code_dir": "$(nos_code_dir)"
-}
-END
-}
