@@ -10,6 +10,26 @@ java_condensed_runtime() {
   echo ${runtime//[.-]/}
 }
 
+java_home() {
+  case "$(java_runtime)" in
+  oracle-j??8)
+    echo "$(nos_data_dir)/java/oracle-8"
+    ;;
+  sun-j??7)
+    echo "$(nos_data_dir)/java/sun-7"
+    ;;
+  sun-j??6)
+    echo "$(nos_data_dir)/java/sun-6"
+    ;;
+  openjdk8)
+    echo "$(nos_data_dir)/java/openjdk8"
+    ;;
+  openjdk7)
+    echo "$(nos_data_dir)/java/openjdk7"
+    ;;
+  esac
+}
+
 clojure_package() {
   echo "$(java_condensed_runtime)-clojure"
 }
