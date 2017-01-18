@@ -14,6 +14,9 @@ nos_init "$@"
 # install sun*_java or openjdk*
 install_runtime
 
+# set up some environment variables
+java_env
+
 # Get dependencies
 lein_deps
 
