@@ -122,7 +122,7 @@ setup() {
   expected="Hello World"
 
   # kill the server
-  pkill -P $pid
+  kill $pid > /dev/null 2>&1
 
   echo "$output"
 
